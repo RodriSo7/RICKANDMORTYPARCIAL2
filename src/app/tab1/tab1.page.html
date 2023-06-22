@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      PERSONAJES DE RICK AND MORTY
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card *ngFor="let result of arregloInfo">
+    <img src="{{result.image}}"/>
+    <ion-card-header >
+      <ion-card-title>{{result.name}}</ion-card-title>
+      <ion-card-subtitle>{{result.id}}</ion-card-subtitle>
+    </ion-card-header>
+  
+  
+  
+
+  
+
+
