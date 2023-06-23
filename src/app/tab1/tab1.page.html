@@ -1,42 +1,49 @@
+<!--CABECERA-->
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      PERSONAJES DE RICK AND MORTY
+      PORTAL DE RICK AND MORTY
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
-
-
-
-  
-
+<!------------>
 
 <ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-title>Filtra o Busca en el Portar de Rick</ion-title>
+    <!--BUSCADOR-->
+      <ion-row>
+        <ion-col>
+            <ion-searchbar placeholder="BUSCAR..." showCancelButton="true" cancelButtonIcon="" [(ngModel)]="texto"></ion-searchbar>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="enviarTexto(texto)">
+            <ion-icon aria-hidden="true" name="search-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    <!------------>
 
-  <ion-text>Filtros</ion-text>
-  <div>
-    <ion-button *ngFor="let filtro of arrayFiltroItemStatus" (click)="valorFiltroStatus(filtro)">
-      {{filtro}}
-    </ion-button>
-    <ion-button *ngFor="let filtro of arrayFiltroItemSpecies" (click)="valorFiltroSpecies(filtro)">
-      {{filtro}}
-    </ion-button>
-    <ion-button (click)="salirFiltro()">
-      X
-    </ion-button>
-  </div>
-
-  <ion-card *ngFor="let result of arregloInfo" (click)="idPersonaje(result.id)" [routerLink]="['/tabs/tab1/detalle-personaje']">
-    <img src="{{result.image}}"/>
-    <ion-card-header >
-      <ion-card-title>{{result.name}}</ion-card-title>
-      <ion-card-subtitle>{{result.id}}</ion-card-subtitle>
-    </ion-card-header>
+    <!--FILTRO-->
+      <div>
+        <ion-button *ngFor="let filtro of arrayFiltroItemStatus" (click)="valorFiltroStatus(filtro)">{{filtro}}</ion-button>
+        <ion-button *ngFor="let filtro of arrayFiltroItemSpecies" (click)="valorFiltroSpecies(filtro)">{{filtro}}</ion-button>
+        <ion-button (click)="salirFiltro()">X</ion-button>
+      </div>
+    <!------------>
   </ion-card>
+
+  <!--MOSTRAR-->
+    <ion-card *ngFor="let result of arregloInfo" (click)="idPersonaje(result.id)" [routerLink]="['/tabs/tab1/detalle-personaje']">
+      <img src="{{result.image}}"/>
+      <ion-card-header >
+        <ion-card-title>{{result.name}}</ion-card-title>
+        <ion-card-subtitle>{{result.id}}</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  <!------------>
   
-  
-  
+</ion-content>
 
   
 
