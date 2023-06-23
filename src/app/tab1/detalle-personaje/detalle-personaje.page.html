@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>detallePersonaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">detallePersonaje</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card *ngFor="let result of arregloDetallePersonajes">
+    <ion-img alt="Silhouette of mountains" src="{{result.image}}" width="15" height="15"></ion-img>
+    <ion-card-content>
+      <ion-text class="custom-text">Numero: #{{result.id}}</ion-text><br><br>
+      <ion-text class="custom-text">Nombre: {{result.name}}</ion-text><br><br>
+      <ion-text class="custom-text">Estado: {{result.status}}</ion-text><br><br>
+      <ion-text class="custom-text">Especie: {{result.species}}</ion-text><br><br>
+      <ion-text class="custom-text">Género: {{result.gender}}</ion-text><br><br>
+      <ion-text class="custom-text">Tipo: {{result.type}}</ion-text><br><br>
+    </ion-card-content>
+  </ion-card>
+
+
+
+</ion-content>

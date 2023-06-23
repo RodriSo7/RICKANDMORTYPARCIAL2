@@ -8,12 +8,13 @@
 
 <ion-content [fullscreen]="true">
 
-  <ion-card *ngFor="let result of arregloInfo">
+  <ion-card *ngFor="let result of arregloInfo" (click)="idPersonaje(result.id)" [routerLink]="['/tabs/tab1/detalle-personaje']">
     <img src="{{result.image}}"/>
     <ion-card-header >
       <ion-card-title>{{result.name}}</ion-card-title>
       <ion-card-subtitle>{{result.id}}</ion-card-subtitle>
     </ion-card-header>
+  </ion-card>
   
   
   
