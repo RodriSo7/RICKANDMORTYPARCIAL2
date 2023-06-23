@@ -6,7 +6,26 @@
   </ion-toolbar>
 </ion-header>
 
+
+
+
+  
+
+
 <ion-content [fullscreen]="true">
+
+  <ion-text>Filtros</ion-text>
+  <div>
+    <ion-button *ngFor="let filtro of arrayFiltroItemStatus" (click)="valorFiltroStatus(filtro)">
+      {{filtro}}
+    </ion-button>
+    <ion-button *ngFor="let filtro of arrayFiltroItemSpecies" (click)="valorFiltroSpecies(filtro)">
+      {{filtro}}
+    </ion-button>
+    <ion-button (click)="salirFiltro()">
+      X
+    </ion-button>
+  </div>
 
   <ion-card *ngFor="let result of arregloInfo" (click)="idPersonaje(result.id)" [routerLink]="['/tabs/tab1/detalle-personaje']">
     <img src="{{result.image}}"/>

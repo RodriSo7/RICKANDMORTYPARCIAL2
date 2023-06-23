@@ -24,4 +24,28 @@ arregloInfo:Result[]=[];
     idPersonaje(id: number){
       this.ServicioPersonajesService.asignarId(id);
     }
+
+
+
+    /***FILTRO Personajes***/
+arrayFiltroItemStatus=["Alive", "Dead"];
+arrayFiltroItemSpecies=["Human", "Alien"];
+
+valorFiltroStatus(filtro: string) {
+  this.ServicioPersonajesService.getFiltroStatus(filtro).subscribe(respuestaFiltro => {
+    console.log(respuestaFiltro);
+    this.arregloInfo = respuestaFiltro.results;
+  })
 }
+valorFiltroSpecies(filtro: string) {
+  this.ServicioPersonajesService.getFiltroSpecies(filtro).subscribe(respuestaFiltro => {
+    console.log(respuestaFiltro);
+    this.arregloInfo = respuestaFiltro.results;
+  })  
+}
+salirFiltro() {
+  this.ngOnInit();
+}
+/**********/
+}
+

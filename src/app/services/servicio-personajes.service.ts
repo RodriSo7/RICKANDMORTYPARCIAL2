@@ -27,7 +27,13 @@ export class ServicioPersonajesService {
     return this.http.get<infoRootObject>("https://rickandmortyapi.com/api/character/"+ id);      
    }
    
-  
+  /*FILTRO Personajes**/
+  getFiltroStatus(filtro: string) {     
+    return this.http.get<RootObject>("https://rickandmortyapi.com/api/character/?status=" + filtro);
+}
+getFiltroSpecies(filtro: string) {     
+    return this.http.get<RootObject>("https://rickandmortyapi.com/api/character/?species=" + filtro);
+}
   
 
 
